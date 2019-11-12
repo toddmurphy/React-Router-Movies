@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Movie = props => {
@@ -13,13 +14,13 @@ const Movie = props => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        console.log(response);
+        console.log(response.data);
         setMovie(response.data);
       })
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [props]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
@@ -43,7 +44,6 @@ const Movie = props => {
           Metascore: <strong>{metascore}</strong>
         </div>
         <h3>Actors</h3>
-
         {stars.map(star => (
           <div key={star} className="movie-star">
             {star}
