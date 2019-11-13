@@ -20,6 +20,7 @@ const Movie = props => {
         console.error(error);
       });
   }, [props.match.params.id]);
+  // Whatever i put in the url as a dynamic variable as an example ID will go in the dependency array
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
