@@ -18,6 +18,7 @@ const App = () => {
       <Route exact path="/movies/:id" component={Movie} /> */}
       <Route exact path="/" render={props => <MovieList {...props} />} />
       <Route exact path="/movies/:id" render={props => <Movie {...props} />} />
+      {/* :id or whatever we name it like :userID is on props.match.params.userID.This is the key and value and see when we log props.match.params.userID */}
     </div>
   );
 };
